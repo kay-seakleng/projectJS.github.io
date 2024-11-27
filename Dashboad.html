@@ -1,0 +1,114 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Budget Tracker</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+        .card {
+            border-radius: 10px;
+        }
+        .btn-add {
+            background-color: #4CAF50;
+            color: white;
+        }
+        .btn-add:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+    <navbar>
+        <div class="navbar h-100 bg-info ">
+            <ul>
+                <button class="btn border border-1 bg-light d-flex "><li class="list-unstyled"><a href="index.html" class="navbar-brand fs-6">Logout <i class="bi bi-box-arrow-right"></i></a></li> </button>
+            </ul>
+        </div>
+    </navbar>
+
+
+    <div class="container mt-5">
+        <h2 class="text-center mb-4">Personal Budget Tracker</h2>
+        <!-- Balance Section -->
+        <div class="row mb-4">
+            <div class="col-md-4">
+                <div class="card text-center p-3 shadow">
+                    <h5>Total Income</h5>
+                    <p class="display-6 text-success" id="totalIncome">$0.00</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card text-center p-3 shadow">
+                    <h5>Total Expense</h5>
+                    <p class="display-6 text-danger" id="totalExpense">$0.00</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card text-center p-3 shadow">
+                    <h5>Balance</h5>
+                    <p class="display-6 text-primary" id="balance">$0.00</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Add Entry Section -->
+        <div class="card shadow p-4 mb-4">
+            <h4>Add New Entry</h4>
+            <form id="budgetForm">
+                <div class="row">
+                    <div class="col-md-4 mb-3">
+                        <input type="text" class="form-control" id="description" placeholder="Description" required>
+                    </div>
+                    <div class="col-md-3 mb-3">
+                        <input type="number" class="form-control" id="amount" placeholder="Amount" required>
+                    </div>
+                    <div class="col-md-3 mb-3">
+                        <select id="type" class="form-select" required>
+                            <option value="income">Income</option>
+                            <option value="expense">Expense</option>
+                        </select>
+                    </div>
+                    <div class="col-md-2">
+                        <button type="submit" class="btn btn-add w-100">Add Entry</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+        <!-- Entries List Section -->
+        <div class="card shadow p-4">
+            <h4>Entries</h4>
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Description</th>
+                        <th>Type</th>
+                        <th>Amount</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody id="entriesList">
+                    <tr>
+                        <td colspan="5" class="text-center text-muted">No entries yet.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    
+    <script src="/js/Dashboad.js"></script>
+</body>
+</html>
